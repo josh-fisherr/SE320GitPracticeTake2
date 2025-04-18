@@ -2,8 +2,21 @@
 
 class Program
 {
-    static void Main(string[] args)
+    public static void Main(string[] args)
     {
-        Console.WriteLine("Hello, World!");
+        List<IFeedable> pets = new List<IFeedable>();
+        
+        Dog dog = new Dog();
+        Cat cat = new Cat();
+        Bird bird = new Bird();
+
+        Hedgehog hedgehog = new Hedgehog();
+        pets.Add(dog);
+        pets.Add(cat);
+        pets.Add(bird);
+        pets.Add(hedgehog);
+        
+        foreach (IFeedable pet in pets)
+            pet.Feed("hamburger");
     }
 }
